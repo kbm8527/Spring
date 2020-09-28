@@ -36,6 +36,17 @@ public class AdminProductController {
 	@Autowired
 	private AdminCategory2Repo cate2Repo;
 	
+	@ResponseBody
+	@GetMapping("/admin/product/delete")
+	public int delete(String[] codes) {
+		
+		return service.deleteProduct(codes);
+			
+			
+	}
+	
+	
+	
 	@GetMapping("/admin/product/search")
 	public String search(String pg, String keyword, String opt, Model model) {
 		
@@ -44,11 +55,16 @@ public class AdminProductController {
 		int total = service.selectCountProducts();
 		int pageEnd = service.getPageEnd(total);
 
+		
+	
+		
 		List<ProductsVo> products = service.selectProductsBySearch(start, opt, keyword);
 		model.addAttribute("products", products);
 		model.addAttribute("pageEnd", pageEnd);
 		model.addAttribute("currentPg", pg);
 
+		
+		
 		return "/admin/product/list";
 	}
 	
