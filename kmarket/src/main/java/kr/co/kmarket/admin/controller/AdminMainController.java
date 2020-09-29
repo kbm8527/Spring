@@ -8,7 +8,15 @@ public class AdminMainController {
 
 	@GetMapping(value={"/admin", "/admin/index"})
 	public String index() {
+		
+		
+		
 		return "/admin/index";
 	}
+	
+	
+	
+	
+	
 	
 }
