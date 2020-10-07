@@ -1,0 +1,158 @@
+/* login */
+.l_body {
+    padding-top: 98px;
+}
+
+.l_main {   
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    min-height: calc(100vh - 543px);
+    width: 100%;
+}
+
+.l_form {
+    width: 100%;
+    padding-top: 95px;
+    padding-bottom: 95px;
+
+}
+.l_container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 750px;
+}
+.l_container > div {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.heading {
+    margin-bottom: 10px;
+    letter-spacing: 0.3;
+    line-height: normal;
+    font-weight: 700;
+    display: block;
+}
+
+
+.l_form_header {
+    margin-bottom: 20px ;
+    text-align: center;
+}
+.heading {
+    padding-right: 150px;
+    margin-bottom: 10px;
+    line-height: normal;
+    font-weight: 700;
+}
+.l_wrapper {
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto ;
+}
+.l_form_error {
+    padding: 0;
+    margin-left: 0;
+    color: #e01355;
+}
+
+.l_user {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+    display: block;
+    letter-spacing: 1px;
+}
+.user_c {
+    display: inline-block;
+    width: 100%;
+    height: 48px;
+    padding: 0 15px;
+    border: 1px solid #c2c4c6;
+    background: #fff none;
+    background-clip: border-box; 
+    border-radius: 0;
+    letter-spacing: .04rem;
+    color: #4a4d53;
+    appearance: none;
+    text-align: left;
+    white-space: nowrap;
+    box-sizing: border-box;
+
+}
+.f_action {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-top: 16px;
+    display: flex;
+    width: 100%;
+
+}
+.l_button {
+    max-width: 100%;
+    color: #fff;
+    border-color:#e01355;
+    background-color: #e01355;
+    width: 100%;
+    padding: 0 40px;
+    position: relative;
+   
+    align-items: center;
+    height: 46px;
+    border: 1px solid;
+    border-radius: 0;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    white-space: normal;
+    opacity: 1;
+    
+}
+.l_form_g>*+* {
+    margin-bottom: 15px;
+}
+.pass_lost {
+    color: #444;
+    margin-top: 10px;
+    text-decoration: underline;
+    font-size: 16px;
+    background-color: transparent;
+}
+.pass_lost:hover {
+    color: #ee316d;
+}
+.l_wrapper hr {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.l_wrapper h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.c_button {
+    width: 100%;
+    padding: 0 20px;
+    height: 46px;
+    font-weight: 600;
+    border: 1px solid tomato;
+    font-size: 15px;
+    margin-top: 25px;
+}
+.c_button:hover {
+    color: #fff;
+    border-color: tomato;
+    background-color: tomato;
+}
+.c_button:focus {
+    color: #000;
+    border-color: tomato;
+    background-color: transparent;
+}
+

@@ -1,0 +1,294 @@
+/* 와인 리스트 */
+* {
+    box-sizing: border-box;
+}
+
+
+.l_main {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 543px);
+    margin-top: 0;
+
+}
+.tour_list {
+    padding: 95px 0;
+    background-color: #f5f6f6;
+    margin: 0;
+
+}
+.l_container {
+    width: 100%;
+    max-width: 73.75rem;
+    padding-right: .625rem;
+    padding-left:.625rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+.tl_header {
+    margin-bottom: 200px;
+    text-align:center;
+}
+
+.tl_grid {
+    display: grid;
+    grid-template:auto/repeat(3,minmax(0,1fr));
+    grid-gap: 1.25rem;
+    flex-wrap: wrap;
+}
+.tl_grid>*{
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+.tcard {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 1px 12px 0 rgba(0,0,0,.05), 0 0 1px 0 rgba(0,0,0,.1);;
+}
+.tcard_image {
+    display: flex;
+    background: rgba(0,0,0,.04);
+}
+.tcard_image:before {
+    content: "";
+    display: block;
+    float: left;
+    padding-bottom: 60%;
+}
+.tcard_image .thumbnail_gallery {
+    width: 100%;
+    padding-bottom: 0;
+}
+.tg_wrapper {
+    position: relative;
+}
+.tg {
+    position: relative;
+    max-height: 475px;
+    overflow: hidden;
+}
+
+.swiper_wrapper {
+    transform: translateZ(0);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    box-sizing: content-box;
+}
+
+.swiper_slide {
+    display: flex;
+    background:rgba(0,0,0,.04) ;
+    flex-shrink: 0;
+    height: 100%;
+    position: relative;
+    transition-property: transform, -webkit-transform;;
+}
+.swiper_slide:before {
+    content: "";
+    display: block;
+    float: left;
+    padding-bottom: 61%;
+}
+.swiper_slide a {
+    width: 100%;
+    background-color: transparent;
+    text-decoration: underline;
+    outline-width: thin;
+    outline-color: rgba(224,19,86,.25);
+    color: currentColor;
+    transition: color .2s,background-color .2s;
+}
+.img_wrapper {
+    width: 100%;
+    height: 100%;
+    filter: blur(0);
+}
+.img_wrapper > img {
+    opacity: 1;
+    transition: opacity .3s;
+    position: static;
+    width: 370px;
+    height: 300px;
+    
+}
+.swipe_slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+.l_img_wrapper.blur {
+    filter: blur(15px);
+}
+.swiper_button-next {
+    right: 0;
+    left: auto;
+    text-align: center;
+}
+.swiper_button-prev{
+    left: 0;
+    right: auto;
+    text-align: center;
+
+}
+.swiper_button-next ,.swiper_button-prev{
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    background-size: 7px 11px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,.5);
+
+     margin-top: -10px;
+
+
+}
+
+.tc_content {
+    position: relative;
+    flex-grow: 1;
+    padding: 25px 25px 30px;
+    display: flex;
+    flex-direction: column;
+}
+.heading3 {
+    line-height:1;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+}
+.tc_price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 15px;
+    line-height:1;
+    text-transform: uppercase;
+    color: #111;
+}
+.tc_price span {
+    font-size: 14px;
+    color: #222;
+    padding: 0 7px;
+}
+.tc_description {
+    padding-right: 90px;
+    line-height:1.5;
+    margin-bottom: 15px;
+}
+.t_button {
+    align-self: flex-start;
+    margin-top: auto;
+    color: #111;
+    background-color: transparent;
+    height: 35px;
+    padding: 5px 20px;
+    appearance: none;
+    position: relative;
+    align-items: center;
+    width: auto;
+    justify-content: center;
+    border: 1px solid tomato;
+    border-radius: 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+    text-decoration: none;
+
+}
+.t_button:hover {
+    color: #fff;
+    border-color: tomato;
+    background-color: tomato;
+}
+/* ------------------------------------------슬릭슬라이드 버튼부분-------------------------------------------- */
+
+/* 버튼 초기화*/
+button {
+border: 0;
+}
+
+
+/* 슬릭슬라이드 버튼 */
+
+.slick-prev {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+z-index: 10;
+width: 48px;
+height: 48px;
+background-color: rgba(0,0,0,.6);
+color: aliceblue;
+display: inline-block;
+text-indent: -9999px;
+font: normal normal normal 14px/1 FontAwesome; 
+}
+
+
+
+
+.slick-next {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+z-index: 10;
+width: 48px;
+height: 48px;
+background-color: rgba(0,0,0,.6);
+color: aliceblue;
+display: inline-block;
+text-indent: -9999px;
+
+font: normal normal normal 14px/1 FontAwesome; 
+}
+
+
+.slick-prev {
+left: 0;
+} 
+
+.slick-next{
+right: 0;
+
+}
+/* 슬릭슬라이더 화살표는 슬릭안에 있는 CSS를 이용하기 때문에 슬릭버튼을 변경해줘야해 */
+.slick-prev::before{
+content: "\f053";
+color: aliceblue;
+font-size: 15px;
+
+position: absolute;
+top: 50%; left: 15px;
+transform: translateY(-50%);
+text-indent: 0;
+}
+
+
+.slick-next::before{
+
+content: "\f054";
+color: aliceblue;
+font-size: 15px;
+
+position: absolute;
+top: 50%; right: 15px;
+transform: translateY(-50%);
+text-indent: 0;
+
+}

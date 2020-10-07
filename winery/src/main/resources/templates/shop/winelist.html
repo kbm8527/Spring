@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winery Tour</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+
+
+    <!-- 제이쿼리 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- 슬릭 js -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  
+    <script type="text/javascript" src="/winery/js/index.js"></script>
+
+    <link rel="stylesheet" href="/winery/css/index.css">
+    <link rel="stylesheet" href="/winery/css/winelist.css">
+    
+
+   
+    
+    
+</head>
+<body>
+    <div id="whole">
+        <div>
+            <!-- 헤더 영역-->
+            <header class="header">
+                <div class="header_inner">
+                    <a class="headerlogo" href="#" ><span><img src="/winery/img/logo-01.svg" alt=""></span></a>
+                    <nav class="nav" role="navigation">
+                        <ul class="nav_list">
+                            <li class="nav_item"> <!--서브네비게이션 있음-->
+                               <div class="nav_main">
+                                    <a class="nav_link" href="#">Winery Tours</a>
+                                    <button type="button" class="nav_link-arrow">
+
+                                    </button>
+                                    <div class="snav_tour">
+                                        <ul class="snav_list">
+                                            <li class="snav_item">
+                                                <a aria-current="page" class="snav_link" href="#">
+                                                    View all Tours
+                                                </a>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                        Half-Day Tour
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                <div class="tsnav">
+                                                  
+                                                    <ul class="tsnav_list">
+                                                        <li class="tsnav_item">
+                                                            <a class="tsnav_link" href="#">
+                                                                <div class="tsnav_linktitle">말버러 와이너리 투어</div>
+                                                                <div class="tsnav_linkduration">5시간</div>
+                                                                <div class="tsnav_linkprice">50,000원</div>
+                                                                <div class="tsnav_linkmap">지도</div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                        Full-Day Tour
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                <div class="tsnav">
+                                                    
+                                                    <ul class="tsnav_list">
+                                                        <li class="tsnav_item">
+                                                            <a class="tsnav_link" href="#">
+                                                                <div class="tsnav_linktitle">말버러 와이너리 투어</div>
+                                                                <div class="tsnav_linkduration">5시간</div>
+                                                                <div class="tsnav_linkprice">50,000원</div>
+                                                                <div class="tsnav_linkmap">지도</div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                        Private Tour
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                <div class="tsnav">
+                                                    <ul class="tsnav_list">
+                                                        <li class="tsnav_item">
+                                                            <a class="tsnav_link" href="#">
+                                                                <div class="tsnav_linktitle">말버러 와이너리 투어</div>
+                                                                <div class="tsnav_linkduration">5시간</div>
+                                                                <div class="tsnav_linkprice">50,000원</div>
+                                                                <div class="tsnav_linkmap">지도</div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                               </div> 
+                            </li>
+                            <li class="nav_item"> <!--서브네비게이션 있음-->
+                               <div class="nav_main">
+                                    <a class="nav_link" href="#">Discover Our Wine</a>
+                                    <button type="button" class="nav_link-arrow">
+
+                                    </button>
+                                    <div class="snav_tour">
+                                        <ul class="snav_list">
+                                            <li class="snav_item">
+                                                <a aria-current="page" class="snav_link" href="#">
+                                                    View All Wines
+                                                </a>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                       Red Wine
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                <div class="tsnav">
+                                                 
+
+                                                </div>
+                                            </li>    
+                                            <li class="snav_item" style="background-color: darkcyan;">
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                       White Wine
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                <div class="tsnav">
+                                                 
+
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                               </div> 
+                            </li>
+                            <li class="nav_item"> <!--서브네비게이션 있음-->
+                               <div class="nav_main">
+                                    <a class="nav_link" href="#">Reviews</a>
+                                    <button type="button" class="nav_link-arrow">
+
+                                    </button>
+                                    
+                               </div> 
+                            </li>
+                            <li class="nav_item"> <!--서브네비게이션 있음-->
+                               <div class="nav_main">
+                                    <a class="nav_link" href="#">About Us</a>
+                                    <button type="button" class="nav_link-arrow">
+
+                                    </button>
+                                    <div class="snav_tour">
+                                        <ul class="snav_list">
+                                            <li class="snav_item">
+                                                <a aria-current="page" class="snav_link" href="#">
+                                                    View
+                                                </a>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                        About us
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">    
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                        contact
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                
+                                            </li>
+                                        </ul>
+                                    </div>
+                               </div> 
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header_contact">
+                        <a class="c button" href="#">Contact Us</a>
+                        <div class="header_user">
+                            <a class="user" href="#"><i class="far fa-user"></i></a>
+                            <div class="snav_basic page-start">
+                                <ul class="snav_basic_list">
+                                    <li class="snav_basic_item" >
+                                        <a class="snav_basic_link" href="#">Sign in</a>
+                                    </li>
+                                    <li class="snav_basic_item">
+                                        <a class="snav_basic_link" href="#">Create account</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!--메인 영역-->
+            <main class="l_main">
+                <section class="t_banner" style="background-image: url('/winery/img/wine_glass.png');" > 
+                    <div class="container">
+                        <div class="home_banner_inner">
+                            <h2></h2> <br>
+                            <h2></h2>
+                        </div>
+                    </div>
+                </section>
+                <section class="t_intro">
+                    <div class="l_container">
+                        <nav class="breadcrumbs">
+                            <ul class="breadcrumbs_list">
+                                <li class="breadcrumbs_item">
+                                    <a class="breadcrumbs_link" href="#">Home</a>
+                                </li>
+                                <li class="breadcrumbs_item">
+                                    <a class="breadcrumbs_link" href="#">View</a>
+                                </li>
+                                <li class="breadcrumbs_item">
+                                    <a class="breadcrumbs_link" href="#">wine</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <br>
+                        <div class="t_grid">
+                            <div>
+                                <h1 class="heading1">wine</h1>
+                                <div>
+                                  <p>
+                                    Sauvignon Blanc is the flagship varietal of New Zealand, and is typically a very crisp aromatic wine with notes of grapefruit, tropical fruit and cut grass.
+
+                                    The much-lauded white wines of New Zealand tend to be slightly sweeter than those from Bordeaux and the Loire Valley, and are hugely influenced by the growing conditions of the country.
+                                    
+                                    The grape originates from Bordeaux, where it is also known as Pouilly-Fumé, Sancerre, and Graves, and is one of the world's most widely planted grapes.
+                                    
+                                    Marlborough is the most revered wine-producing region in the small country, accounting for 62% of all wine produced in New Zealand.
+                                    
+                                    The New Zealand Sauvignon Blanc scene started popping in 1970s, with the high quality Sauvignon Blancs coming out of Marlborough illustrating the great potential for grape growing in New Zealand.
+                                    
+                                    Sauvignon Blanc tends to be fermented in stainless steel vats, which results in a clean, crisp flavor, and will not show any of that butteriness that is often prevalent in well-oaked Chardonnay for instance.
+                                    
+                                    When it comes to pairing, think white meat, shellfish, and try to accentuate the herbaceous qualities of the wine with ingredients like parsley and cilantro.
+                                  </p>
+                                </div>    
+                            </div>
+                        
+                            <div class="li">
+                                <h4 class="heading4">
+                                    wine
+                                </h4>
+                                <div>
+                                    <ul>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                    </ul>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 투어 리스트-->
+                <main class="l_main">
+                    <div nami="i" class="tour_list">
+                        <div class="l_container">
+                            <div class="tl_header">
+                                <h2 class="heading2">Our wine</h2>
+                            </div>
+                            <div class="tl_grid">
+                                <div class="tcard">
+                                    <div class="tcard_image">
+                                        <div class="thumbnail_gallery">
+                                            <div class="tg_wrapper">
+                                                <div class="tg swiper">
+                                                    <div class="swiper_wrapper">
+
+                                                        <div class="swiper_slide swiper_slide" style="width: 370px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/pinkwine.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                   
+                                                    
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                <div class="tc_content">
+                                    <h3 class="heading3">wine</h3>
+                                    <div class="tc_price">
+                                        price from
+                                        <span>50000</span>
+                                        원
+                                    </div>
+                                    <div>
+                                        <nav>
+                                            <h5 class="rating star4">...</h5>
+                                            <span>4.7</span>
+                                        </nav>
+                                    </div>
+                                    <p class="tc_description">
+                                        Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
+
+
+                                    </p>
+                                    <a class="t_button" href="view">View wine</a>
+                                    <span></span>
+                                </div>
+
+
+                                
+                            
+                            
+                                </div>
+                                <div class="tcard">
+                                    <div class="tcard_image">
+                                        <div class="thumbnail_gallery">
+                                            <div class="tg_wrapper">
+                                                <div class="tg swiper">
+                                                    <div class="swiper_wrapper">
+
+                                                        <div class="swiper_slide swiper_slide" style="width: 370px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/cabernet.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                
+                                                    
+                                                    
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                <div class="tc_content">
+                                    <h3 class="heading3">wine</h3>
+                                    <div class="tc_price">
+                                        price from
+                                        <span>50000</span>
+                                        원
+                                    </div>
+                                    <div>
+                                        <nav>
+                                            <h5 class="rating star4">...</h5>
+                                            <span>4.7</span>
+                                        </nav>
+                                    </div>
+                                    <p class="tc_description">
+                                        Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
+
+
+                                    </p>
+                                    <a class="t_button" href="view">View wine</a>
+                                    <span></span>
+                                </div>
+
+
+                                
+                            
+                            
+                                </div>
+                                <div class="tcard">
+                                    <div class="tcard_image">
+                                        <div class="thumbnail_gallery">
+                                            <div class="tg_wrapper">
+                                                <div class="tg swiper">
+                                                    <div class="swiper_wrapper">
+
+                                                        <div class="swiper_slide swiper_slide" style="width: 370px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/champagne.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                        
+                                                ->
+                                                    
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                <div class="tc_content">
+                                    <h3 class="heading3">wine</h3>
+                                    <div class="tc_price">
+                                        price from
+                                        <span>50000</span>
+                                        원
+                                    </div>
+                                    <div>
+                                        <nav>
+                                            <h5 class="rating star4">...</h5>
+                                            <span>4.7</span>
+                                        </nav>
+                                    </div>
+                                    <p class="tc_description">
+                                        Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
+
+
+                                    </p>
+                                    <a class="t_button" href="view">View wine</a>
+                                    <span></span>
+                                </div>
+
+
+                                
+                            
+                            
+                                </div>
+                           
+                           
+                           
+                           
+                           
+                           
+                           
+                           
+                            </div>        
+                            
+                        </div>
+                    </div>
+                </main>
+
+
+            <!--푸터 영역-->
+            <footer class="footer">
+                <div class="footer_upper">
+                    <div class="container">
+                        <div class="footer_grid">
+                            <div class="footer_brand">
+                                <a  aria-current="page" class="headerlogo" href="#"><span><img src="/winery/img/logo-02.svg" alt="로고"></span></a>
+                                <address class="footer_contact">
+                                    <dl>
+                                        <div>
+                                            <dt>Call</dt>
+                                            <dd>
+                                                <a href="#">+82 000-0000-0000</a>
+                                            </dd>
+                                        </div>
+                                        <div>
+                                            <dt>Email</dt>
+                                            <dd>
+                                                <a href="#">info@gmail.com</a>
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                    <p>
+                                        Malborough, New Zealand <br>
+                                        Malborough, New Zealand <br>
+                                        Malborough, New Zealand
+                                    </p>
+                                </address>
+                            </div>
+                            <nav class="footer_nav" role="navigation">
+                                <span class="footer_nav_title">Winery Tour Types</span>
+                                <ul>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav class="footer_nav" role="navigation">
+                                <span class="footer_nav_title">Winery Tour Types</span>
+                                <ul>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav class="footer_nav" role="navigation">
+                                <span class="footer_nav_title">Winery Tour Types</span>
+                                <ul>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav class="footer_nav" role="navigation">
+                                <span class="footer_nav_title">Winery Tour Types</span>
+                                <ul>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <button type="button" class="footer_scroll">
+                            <span>Top</span>
+                        </button>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+  
+
+</body>
+</html>

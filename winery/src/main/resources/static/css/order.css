@@ -1,0 +1,133 @@
+
+
+
+/* order */
+.c_banner_inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    text-align: center;
+}
+.o_heading {
+    color: #fff;
+    letter-spacing: .3rem;
+    line-height: normal;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 40px;
+}
+.o_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 150px;
+}
+.o_title {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    letter-spacing: 0.2rem;
+    line-height: normal;
+    text-transform: uppercase;
+    font-weight: 700;
+
+}
+.o_grid p {
+    margin: 12px 0 0;
+}
+ .con {
+display: inline-block;
+width: 400px;
+
+
+}
+
+.form_g, .f_label .form_con {
+    display:block;
+   
+}
+.form_g {
+    width: 150px;
+    margin-bottom: 10px;
+}
+.form_g input {
+    height: 32px;
+}
+
+.form_g:nth-child(1){
+    float: right;
+    margin-right: 60px;
+}
+
+.form_con:nth-child(2) {
+    width: 150px;
+}
+.form_g:nth-of-type(3) input {
+    width: 340px;
+}
+.form_g:nth-of-type(4) input {
+    width: 340px;
+}
+.form_g:nth-of-type(5) input {
+    width: 340px;
+}
+.form_g:nth-of-type(6) input {
+    width: 340px;
+}
+.form_g:nth-of-type(7) input {
+    width: 340px;
+}
+.form_g:nth-of-type(8) input {
+    width: 340px;
+}
+
+
+.form_con {
+    margin-top: 10px;
+    width: 80px;
+}
+
+.t_button {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.box {
+    border: 1px solid #dddddd !important;
+    width: 300px;
+    margin-top: 20px;
+
+}
+.heading3 {
+    height: 50px;
+    background: #f5f5f5;
+    padding: 5px 15px;
+    padding-top: 10px;
+    letter-spacing: 0.2rem;
+    line-height: normal;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-bottom: 1px solid #dddddd;
+}
+.o_table {
+    width: 100%;
+}
+.o_table tr {
+   margin: 5px 0;
+}
+.o_table tr td {
+    padding: 6px 10px;
+    font-size: 16px;
+}
+.o_table tr td:nth-child(2) {
+    text-align: right;
+}
+
+.o_price td {
+    border-top: 1px dotted #ccc;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+
