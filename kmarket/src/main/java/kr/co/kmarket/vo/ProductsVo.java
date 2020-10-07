@@ -35,6 +35,7 @@ public class ProductsVo {
 	private int delivery;
 	private int hit;
 	private int score;
+	private int review; // 테이블에 컬럼추가 후 필드 추가
 	private String thumb1;  
 	private String thumb2;
 	private String thumb3;
