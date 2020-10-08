@@ -9,6 +9,10 @@
 		SELECT COUNT(`uid`) AS `result` FROM `km_member` WHERE `uid`=#{uid};
 	</select>
 
+	<select id="selectMember" resultType="kr.co.kmarket.vo.MemberVo">
+		SELECT * FROM `km_member` WHERE `uid`=#{uid} AND `pass`=#{pass};
+	</select>
+
 
 
 	<!-- 
