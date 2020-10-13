@@ -68,5 +68,16 @@ public class MemberController {
 		memberRepo.save(vo); //insert문
 		return "redirect:/member/login";
 	}
+
+	@GetMapping("/member/contact")
+	public String contact() {
+		return "/member/contact";
+	}
+	
+
+	@GetMapping("/member/review")
+	public String review() {
+		return "/member/review";
+	}
 	
 }

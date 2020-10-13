@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import kr.co.winery.vo.TermsVo;
 
+
 @Repository
 public interface TermsRepo extends JpaRepository<TermsVo, Integer> {
 

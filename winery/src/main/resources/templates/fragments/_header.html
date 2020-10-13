@@ -1,0 +1,223 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+            <!-- 헤더 영역-->
+            <header th:fragment="_header" class="header">
+                <div class="header_inner">
+                    <a class="headerlogo" th:href="@{/}" ><span><img th:src="@{/img/logo-01.svg}" alt=""></span></a>
+                    <nav class="nav" role="navigation">
+                        <ul class="nav_list">
+                            <li class="nav_item"> <!--서브네비게이션 있음-->
+                               <div class="nav_main">
+                                    <a class="nav_link" href="#">Winery Tours</a>
+                                    <button type="button" class="nav_link-arrow">
+
+                                    </button>
+                                    <div class="snav_tour">
+                                        <ul class="snav_list">
+                                            <li class="snav_item">
+                                                <a aria-current="page" class="snav_link" href="#">
+                                                    View all Tours
+                                                </a>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                        Half-Day Tour
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                <div class="tsnav">
+                                                  
+                                                    <ul class="tsnav_list">
+                                                        <li class="tsnav_item">
+                                                            <a class="tsnav_link" th:href="@{/shop/list}">
+                                                                <div class="tsnav_linktitle">말버러 와이너리 투어</div>
+                                                                <div class="tsnav_linkduration">5시간</div>
+                                                                <div class="tsnav_linkprice">50,000원</div>
+                                                                <div class="tsnav_linkmap">지도</div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                        Full-Day Tour
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                <div class="tsnav">
+                                                    
+                                                    <ul class="tsnav_list">
+                                                        <li class="tsnav_item">
+                                                            <a class="tsnav_link" href="#">
+                                                                <div class="tsnav_linktitle">말버러 와이너리 투어</div>
+                                                                <div class="tsnav_linkduration">5시간</div>
+                                                                <div class="tsnav_linkprice">50,000원</div>
+                                                                <div class="tsnav_linkmap">지도</div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                        Private Tour
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                <div class="tsnav">
+                                                    <ul class="tsnav_list">
+                                                        <li class="tsnav_item">
+                                                            <a class="tsnav_link" href="#">
+                                                                <div class="tsnav_linktitle">말버러 와이너리 투어</div>
+                                                                <div class="tsnav_linkduration">5시간</div>
+                                                                <div class="tsnav_linkprice">50,000원</div>
+                                                                <div class="tsnav_linkmap">지도</div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                               </div> 
+                            </li>
+                            <li class="nav_item"> <!--서브네비게이션 있음-->
+                               <div class="nav_main">
+                                    <a class="nav_link" href="#">Discover Our Wine</a>
+                                    <button type="button" class="nav_link-arrow">
+
+                                    </button>
+                                    <div class="snav_tour">
+                                        <ul class="snav_list">
+                                            <li class="snav_item">
+                                                <a aria-current="page" class="snav_link" href="#">
+                                                    View All Wines
+                                                </a>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                       Red Wine
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                <div class="tsnav">
+                                                 
+                                                   
+                                                </div>
+
+
+                                            </li>   
+                                            <li class="snav_item" style="background-color: darkcyan;">    
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                       White Wine
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                <div class="tsnav">
+                                                 
+                                                   
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                               </div> 
+                            </li>
+                            <li class="nav_item"> <!--서브네비게이션 있음-->
+                               <div class="nav_main">
+                                    <a class="nav_link" th:href="@{/member/review}">Reviews</a>
+                                    <button type="button" class="nav_link-arrow">
+
+                                    </button>
+                                    
+                               </div> 
+                            </li>
+                            <li class="nav_item"> <!--서브네비게이션 있음-->
+                               <div class="nav_main">
+                                    <a class="nav_link" href="#">About Us</a>
+                                    <button type="button" class="nav_link-arrow">
+
+                                    </button>
+                                    <div class="snav_tour">
+                                        <ul class="snav_list">
+                                            <li class="snav_item">
+                                                <a aria-current="page" class="snav_link" href="#">
+                                                    View
+                                                </a>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                        About us
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">   
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                        contact
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                
+                                            </li>
+                                        </ul>
+                                    </div>
+                               </div> 
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header_contact">
+                        <a class="c button" href="#">Contact Us</a>
+                        <div class="header_user">
+                            <a class="user" href="#"><i class="far fa-user"></i></a>
+                            <div class="snav_basic page-start">
+                                <ul class="snav_basic_list">
+                                    <li class="snav_basic_item" >
+                                        <a class="snav_basic_link" th:href="@{/member/login}">Sign in</a>
+                                    </li>
+                                    <li class="snav_basic_item">
+                                        <a class="snav_basic_link" th:href="@{/member/signup}">Create account</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+           
+</html>

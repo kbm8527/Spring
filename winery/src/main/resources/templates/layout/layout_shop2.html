@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winery Tour</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    
+    
+     <!--모달 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    
+    
+    
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/wineview.css}">
+    <link rel="stylesheet" th:href="@{/css/view.css}">
+    
+    
+    
+    
+    
+ 
+    <!-- 제이쿼리 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+ 
+  	<!-- 슬릭 js -->
+    	
+	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+	
+    <!-- 헤더 js -->
+    <script type="text/javascript" th:src="@{/js/index.js}"></script>
+	<script type="text/javascript" th:src="@{/js/slider.js}"></script>
+	<script type="text/javascript" th:src="@{/js/scroll.js}"></script>
+	<script type="text/javascript" th:src="@{/js/modal.js}"></script>
+	
+
+	
+
+    <style>
+    </style>
+   
+    
+</head>
+<body>
+    <div id="whole">
+    
+        <div>
+            <!-- 헤더 영역 시작-->
+                 <header th:insert="/fragments/_header.html::_header"></header>
+          	<!-- 헤더 영역 꿑-->
+           
+           <div id="modal" class="m cart_modal" style="display: none;" aria-hidden="true" >
+                <div class="m_dialog">
+                    <div class="m_content">
+                        <div class="modal_header row">
+                            <h4 class="m_title">
+                                Item added to your cart
+                            </h4>
+                            <a href="#" rel="modal:close" class="mo_close close" data_dismiss="modal">
+                                <i class="fa fa-items pull-right">x</i>
+                            </a>
+                        </div>
+                        <div class="m_body row">
+                            <div class="cm_left">
+                                <div class="cm_top row">
+                                    <div class="add_bottle">
+                                        <img src="/winery/img/pinkwine.png" alt="pinkwine" class="w_image">
+                                    </div>
+                                    <div class="w_info">
+                                        <h2 class="pro_name">
+                                            <span>Pinor Noir</span>
+                                        </h2>
+                                        <p>
+                                            item code:
+                                            <span>a1111</span>
+                                        </p>
+                                        <p>
+                                            item price:
+                                            <span>123</span>
+                                        </p>
+                                        <p>
+                                            qty:
+                                            <span>1</span>
+                                            <a class="remove_item" href="#">
+                                                <span class="r_item">added by mistake?</span>
+                                                <i class="fa fa-trash-0" aria-hidden="true"></i>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cm_right">
+                                <h2>
+                                    cart summary:
+                                    <span class="items">1 items</span>
+                                </h2>
+                                <p>
+                                    order subtotal:
+                                    <b>
+                                        <span>20,000 원</span>
+                                    </b>
+                                </p>
+                                <a href="cart.html">
+                                    <span>view cart & checkout</span>
+                                </a>
+                                <a href="#">
+                                    <span>
+                                        continue shopping
+                                        <i class="fa fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+           
+            <!--메인 영역 -->
+          <main layout:fragment="content"></main>
+
+            <!--푸터 영역 시작 -->
+           		<footer th:insert="/fragments/_footer.html::_footer"></footer>
+            <!--푸터 영역 끝-->
+          
+        </div>
+    </div>
+ 
+</body>
+ 
+</html>
+

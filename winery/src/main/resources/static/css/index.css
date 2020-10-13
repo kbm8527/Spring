@@ -50,10 +50,6 @@ body {
 
 
 
-
-
-
-
 .headerlogo {
     display: block;
     width: 180px;
@@ -400,6 +396,8 @@ body {
     width: 100%;
     text-decoration: none;
 }
+
+
 .main {
     display: flex;
     flex-direction:column;

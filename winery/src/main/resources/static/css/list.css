@@ -13,14 +13,20 @@
     position: relative;
 
 }
-.l_container {
+@media (max-width:1024px){
+	#whole {
+	width:95%;
+	margin:0 auto;
+	}
+}
+/*.l_container {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
     max-width: 1200px;
     padding-left: 20px;
     padding-right: 20px;
-}
+}*/
 .breadcrumbs {
     position: absolute;
     top: -75px;

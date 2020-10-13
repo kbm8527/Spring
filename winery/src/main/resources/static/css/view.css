@@ -5,12 +5,23 @@
     background: #111 url('/winery/img/t-banner.png') 40% 60%/cover no-repeat;
     display: block;
 }
-.l_container {
+
+@media (max-width:480px){
+	.l_container {
+	width:auto;
+	margin:0 auto;
+	}
+}
+
+
+
+/*.l_container {
     width: 100%;
-    margin-left: 170px;
+    margin-left: 0px;
     padding-left: 150px;
 
 }
+*/
 
 .tb_inner {
     position: relative;
@@ -39,7 +50,7 @@
 
 .tl_grid {
     display: grid;
-    grid-template-columns: 800px 300px;
+    grid-template-columns: 700px 300px;
     grid-gap: 100px;
    
     
@@ -52,10 +63,10 @@
 
 
 .thumbnail_gallery {
-    width:800px ;
+    width:700px ;
 }
 .img_wrapper img {
-    width: 800px;
+    width: 700px;
 }
 .halftourimg {
     height: 533px;
