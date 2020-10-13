@@ -69,6 +69,7 @@ public class MemberController {
 		
 		
 		TermsVo vo = termsRepo.findById(0).get(); 
+		 
 		
 		
 		

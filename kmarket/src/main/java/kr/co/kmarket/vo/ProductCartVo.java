@@ -20,4 +20,9 @@ public class ProductCartVo {
 	private int total;
 	private String rdate;
 	
+	// 추가필드 선언
+	private int cate1;
+	private int cate2;
+	private String thumb1;
+	
 }
