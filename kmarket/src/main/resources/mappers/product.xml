@@ -5,6 +5,7 @@
 
 <mapper namespace="kr.co.kmarket.admin.dao.AdminProductDao">
 
+
 	<select id="selectProducts" resultType="kr.co.kmarket.vo.ProductsVo">
 		SELECT * FROM `km_products` LIMIT #{start}, 10;
 	</select>

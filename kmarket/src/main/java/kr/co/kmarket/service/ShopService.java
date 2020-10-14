@@ -36,6 +36,15 @@ public class ShopService {
 		return dao.selectCart(uid);
 	}
 	
+	public List<ProductCartVo> selectOrder(int[] seqs) {
+		return dao.selectOrder(seqs);
+	}
+	
+	
+	public int deleteCart(int[] seqs) {
+		return dao.deleteCart(seqs);
+	}
+	
 	public void setTitles(HttpSession sess, int cate1, int cate2) {
 		List<CategoriesVo> categories = (List<CategoriesVo>) sess.getAttribute("cate1List");
 		String tit1 = categories.get(cate1-1).getTitle();

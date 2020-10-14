@@ -4,6 +4,139 @@
 
   <!-- 장바구니 -->
   <section id="cart" layout:fragment="content">
+  
+  	<script>
+  	
+  		$(function(){
+  		
+  			// 전체 박스 클릭
+  			$('input[name=all]').change(function(){
+  			
+			var isChecked = $(this).is(':checked'); //상태변수선언 
+				
+				if(isChecked){
+					//체크
+					$('input[name=chk]').prop('checked', true);
+					
+				}else{
+					//체크해제
+					$('input[name=chk]').prop('checked', false);
+				}
+				
+				
+  				
+  			});
+  			//var codes = []; 전역변수로 선언해놓으면 상품을 선택했다 해제 시에 상품이 쌓여서 삭제되지 않는다.
+  			//선택삭제
+  			$('input[name=del]').click(function(){
+  				
+  				var seqs = [];
+  				 				
+  				$('input[name=chk]:checked').each(function(i){ //checked:filter속성 
+  					
+  					seqs[i] = $(this).val();
+  					 					
+  				}); 
+  				
+
+  				if(seqs.length == 0) { 					
+  					alert('최소 1개 이상의 상품을 선택하세요.');
+  					return
+  
+  				}
+  				  			
+  				// 서버로 상품코드 전송
+  	
+  				var url = '/kmarket/shop/cartDel';
+  				var param = {'seqs':seqs};
+  			
+  					$.ajax({
+						url: '/kmarket/shop/cartDel',
+						type: 'post',
+						data: param,
+						traditional : true, //제이쿼리 배열 전송시 반드시 추가되는 옵션
+						dataType:'text',
+						success: function(data){
+							
+							alert("삭제 상품 갯수 : "+data);
+							location.replace('/kmarket/shop/cart');
+							//location.href = '/kmarket/shop/cart';
+							
+						}					
+					});
+					  				
+  			});//선택삭제 버튼 끝
+  			
+  			//주문하기 버튼
+  			$('input[name=order]').click(function(){
+  				
+  				var seqs = [];
+	 				
+  				$('input[name=chk]:checked').each(function(i){ //checked:filter속성 
+  					
+  					seqs[i] = $(this).val();
+  					 					
+  				}); 
+  				
+
+  				if(seqs.length == 0) { 					
+  					alert('주문할 상품을 선택하세요.');
+  					return
+  				}
+  			
+  				var seqs = {'seqs': seqs};
+  				var params = $.param(seqs, true);				
+  								
+  				
+  				
+  				
+  				
+  				// 주문페이지 이동
+  				location.href = '/kmarket/shop/order?'+params;
+  				//replace와 href는 history back 차이가 있다 
+  				
+  			});
+  			
+  			
+  			
+  			
+  			
+  			var price = $('.p_price > td:nth-child(2)');
+  			var seqs = [];
+  			
+  			$('input[name=chk]').click(function(){
+  	  			
+  				
+  				
+  				$('input[name=chk]:checked').each(function(i){
+  				seqs[i] = $(this).val();
+  				
+  				if(i >= 0){
+  					i = i + 1;
+  					
+  				var count = price.val();
+  				var total = count + i;
+  				price.text(total);
+  				
+  			
+  				}else {
+  					
+  				}
+  			
+  	  			//alert('선택');
+  	  			
+  	  		});
+  			
+  			});
+  			
+  			
+  		});
+  		
+  	
+  	
+  	</script>
+  
+  
     
     <!-- 제목, 페이지 네비게이션 -->
     <nav>
@@ -15,6 +148,7 @@
     
     <section>
       <form action="#">
+      <input type="hidden" name="uid" th:value="${session.member.uid}"/>
         <table>
           <thead>
             <tr>
@@ -33,7 +167,7 @@
               <td colspan="7">장바구니에 상품이 없습니다.</td>
             </tr>
             <tr th:each="item:${items}">
-              <td><input type="checkbox" name=""></td>
+              <td><input class="c" type="checkbox" name="chk" th:value="${item.seq}"></td>
               <td>
                 <article>
                   <a href="#">
@@ -62,6 +196,38 @@
     <div class="info">
       <h2>전체합계</h2>
       <table border="0">
+        <tr class="p_price">
+          <td>상품수</td>
+          <td>0</td>
+          <td th:if="${item}">[[${totalInfo.count}]]</td>
+        </tr>
+        <tr>
+          <td>상품금액</td>
+          <td>0</td>
+          <td th:if="${item}" >[[${#numbers.formatInteger(totalInfo.price, 3, 'COMMA')}]]</td>
+        </tr>
+        <tr>
+          <td>할인금액</td>
+          <td>0</td>
+          <td th:if="${item}">-[[${#numbers.formatInteger(totalInfo.sale, 3, 'COMMA')}]]</td>
+        </tr>
+        <tr>
+          <td>배송비</td>
+          <td>0</td>
+          <td th:if="${item}">[[${#numbers.formatInteger(totalInfo.delivery, 3, 'COMMA')}]]</td>
+        </tr>              
+        <tr>
+          <td>포인트</td>
+          <td>0</td>
+          <td th:if="${item}">[[${#numbers.formatInteger(totalInfo.point, 3, 'COMMA')}]]</td>
+        </tr>
+        <tr>
+          <td>전체주문금액</td>
+          <td>0</td>
+          <td th:if="${item}">[[${#numbers.formatInteger(totalInfo.total, 3, 'COMMA')}]]</td>
+        </tr>
+      </table>
+      <!--    <table border="0">
         <tr>
           <td>상품수</td>
           <td>[[${totalInfo.count}]]</td>
@@ -86,8 +252,11 @@
           <td>전체주문금액</td>
           <td>[[${#numbers.formatInteger(totalInfo.total, 3, 'COMMA')}]]</td>
         </tr>
-      </table>
-      <input type="button" name="" value="주문하기">
+      </table>  -->
+      
+      
+      
+      <input type="button" name="order" value="주문하기">
 
     </div>
   </section>

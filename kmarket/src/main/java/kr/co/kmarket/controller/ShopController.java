@@ -82,6 +82,7 @@ public class ShopController {
 		}		
 	}
 	
+	
 	@ResponseBody
 	@PostMapping("/shop/cart")
 	public ResultVo cart(ProductCartVo vo) {
@@ -90,8 +91,23 @@ public class ShopController {
 		return new ResultVo(result);
 	}
 	
+	@ResponseBody
+	@PostMapping("/shop/cartDel")
+	public int cartDel(int[] seqs) {
+		
+		return service.deleteCart(seqs);		
+
+	}
+	
+	
 	@GetMapping("/shop/order")
-	public String order() {
+	public String order(int[] seqs, Model model) {
+		
+		List<ProductCartVo> items = service.selectOrder(seqs);
+		model.addAttribute("items", items);
+	
+		
+		
 		return "/shop/order";
 	}
 	
