@@ -3,6 +3,7 @@ package kr.co.winery.controller;
 import java.time.LocalDateTime;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,7 @@ import kr.co.winery.vo.MemberVo;
 import kr.co.winery.vo.TermsVo;
 import kr.co.winery.persistence.MemberRepo;
 import kr.co.winery.persistence.TermsRepo;
+import kr.co.winery.service.MemberService;
 
 
 @Controller
@@ -24,15 +26,38 @@ public class MemberController {
 	@Autowired
 	private MemberRepo memberRepo;
 	
-	
+	@Autowired
+	private MemberService service;
 	
 	@GetMapping("/member/login")
-	public String login() {
-		
-		
-		
+	public String login(String success, Model model) {
+		model.addAttribute("success","success");
+				
 		return "/member/login";	
 	}
+	
+	@PostMapping("/member/login")
+	public String login(MemberVo vo, HttpSession sess) {
+		
+		MemberVo member = service.selectMember(vo);
+		
+		if(member != null) {
+			sess.setAttribute("member", member);
+			sess.setAttribute("type", member.getType());
+			return "redirect:/index";
+		}else {
+			return "redirect:/member/login?success=fail";
+		}
+		
+				
+		
+	}
+	
+	
+	
+	
+	
+	
 	
 	@GetMapping("/member/signup")
 	public String signup(Model model) {
