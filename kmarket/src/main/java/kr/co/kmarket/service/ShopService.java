@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.co.kmarket.dao.ShopDao;
-import kr.co.kmarket.vo.CartTotalInfoVo;
+import kr.co.kmarket.vo.OrderTotalInfoVo;
 import kr.co.kmarket.vo.CategoriesVo;
 import kr.co.kmarket.vo.MemberVo;
 import kr.co.kmarket.vo.ProductCartVo;
@@ -64,7 +64,7 @@ public class ShopService {
 		
 	}
 	
-	public CartTotalInfoVo cartTotalInfo(List<ProductCartVo> items) {
+	public OrderTotalInfoVo orderTotalInfo(List<ProductCartVo> items) {
 		
 		int count = items.size();
 		int price = 0;
@@ -80,7 +80,12 @@ public class ShopService {
 			point    += item.getPoint();
 			total    += item.getTotal();
 		}
-		return new CartTotalInfoVo(count, price, sale, delivery, point, total);
+		
+		//배송비와 전체금액 최종합산
+		total += delivery;
+		
+		
+		return new OrderTotalInfoVo(count, price, sale, delivery, point, total);
 	}
 	
 }

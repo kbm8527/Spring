@@ -98,40 +98,7 @@
   			});
   			
   			
-  			
-  			
-  			
-  			var price = $('.p_price > td:nth-child(2)');
-  			var seqs = [];
-  			
-  			$('input[name=chk]').click(function(){
-  	  			
-  				
-  				
-  				$('input[name=chk]:checked').each(function(i){
-  				seqs[i] = $(this).val();
-  				
-  				if(i >= 0){
-  					i = i + 1;
-  					
-  				var count = price.val();
-  				var total = count + i;
-  				price.text(total);
-  				
-  			
-  				}else {
-  					
-  				}
-  			
-  	  			//alert('선택');
-  	  			
-  	  		});
-  			
-  			});
-  			
-  			
   		});
-  		
   	
   	
   	</script>
@@ -198,64 +165,30 @@
       <table border="0">
         <tr class="p_price">
           <td>상품수</td>
-          <td>0</td>
-          <td th:if="${item}">[[${totalInfo.count}]]</td>
+          <td>0</td>          
         </tr>
         <tr>
           <td>상품금액</td>
-          <td>0</td>
-          <td th:if="${item}" >[[${#numbers.formatInteger(totalInfo.price, 3, 'COMMA')}]]</td>
+          <td>0</td>       
         </tr>
         <tr>
           <td>할인금액</td>
-          <td>0</td>
-          <td th:if="${item}">-[[${#numbers.formatInteger(totalInfo.sale, 3, 'COMMA')}]]</td>
+          <td>0</td>        
         </tr>
         <tr>
           <td>배송비</td>
-          <td>0</td>
-          <td th:if="${item}">[[${#numbers.formatInteger(totalInfo.delivery, 3, 'COMMA')}]]</td>
+          <td>0</td>         
         </tr>              
         <tr>
           <td>포인트</td>
-          <td>0</td>
-          <td th:if="${item}">[[${#numbers.formatInteger(totalInfo.point, 3, 'COMMA')}]]</td>
+          <td>0</td>   
         </tr>
         <tr>
           <td>전체주문금액</td>
           <td>0</td>
-          <td th:if="${item}">[[${#numbers.formatInteger(totalInfo.total, 3, 'COMMA')}]]</td>
+          
         </tr>
-      </table>
-      <!--    <table border="0">
-        <tr>
-          <td>상품수</td>
-          <td>[[${totalInfo.count}]]</td>
-        </tr>
-        <tr>
-          <td>상품금액</td>
-          <td>[[${#numbers.formatInteger(totalInfo.price, 3, 'COMMA')}]]</td>
-        </tr>
-        <tr>
-          <td>할인금액</td>
-          <td>-[[${#numbers.formatInteger(totalInfo.sale, 3, 'COMMA')}]]</td>
-        </tr>
-        <tr>
-          <td>배송비</td>
-          <td>[[${#numbers.formatInteger(totalInfo.delivery, 3, 'COMMA')}]]</td>
-        </tr>              
-        <tr>
-          <td>포인트</td>
-          <td>[[${#numbers.formatInteger(totalInfo.point, 3, 'COMMA')}]]</td>
-        </tr>
-        <tr>
-          <td>전체주문금액</td>
-          <td>[[${#numbers.formatInteger(totalInfo.total, 3, 'COMMA')}]]</td>
-        </tr>
-      </table>  -->
-      
-      
-      
+      </table>     
       <input type="button" name="order" value="주문하기">
 
     </div>
