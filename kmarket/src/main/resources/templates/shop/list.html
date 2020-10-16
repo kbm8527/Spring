@@ -25,18 +25,16 @@
 
      <!-- 상품목록 10개 -->
      <section>
-     
-     
        <article th:each="item:${items}">
          <ul>
-           <li >
-             <a th:href="@{/shop/view(code=${item.code})}" class="thumb"><img th:src="@{'/thumb/'+${item.cate1}+'/'+${item.cate2}+'/'+${item.thumb1}}" alt="상품이미지"/></a>
+           <li>
+             <a th:href="@{/shop/view(code=${item.code})}" class="thumb">
+             	<img th:src="@{'/thumb/'+${item.cate1}+'/'+${item.cate2}+'/'+${item.thumb1}}" alt="상품 목록 이미지">
+             </a>
            </li>
            <li>
              <h3 class="name"><a th:href="@{/shop/view(code=${item.code})}">[[${item.name}]]</a></h3>
-             <p class="desc">
-               [[${item.descript}]]
-        	 </p>
+             <p class="desc">[[${item.descript}]]</p>
            </li>
            <li>
              <div class="dis_price">
@@ -44,10 +42,10 @@
              </div>
              <div class="org_price">
                <del>[[${#numbers.formatInteger(item.price, 3, 'COMMA')}]]</del>
-               <span>[[${item.discount}]]</span>
+               <span>[[${item.discount}]]%</span>
              </div>
-             <span th:if="${item.delivery = 0}" class="freeshipping">무료배송</span>
-             <span th:if="${item.delivery > 0}" >배송비[[${#numbers.formatInteger(item.delivery, 3, 'COMMA')}]]</span>
+             <span th:if="${item.delivery == 0}" class="freeshipping">무료배송</span>
+             <span th:if="${item.delivery > 0}">배송비 [[${#numbers.formatInteger(item.delivery, 3, 'COMMA')}]]원</span>
            </li>
            <li>
              <h4 class="seller"><i class="fas fa-home"></i>&nbsp;[[${item.company}]]</h4>
@@ -60,7 +58,6 @@
            </li>
          </ul>
        </article>
-      
      </section>
 
      <!-- 상품목록 페이지번호 -->

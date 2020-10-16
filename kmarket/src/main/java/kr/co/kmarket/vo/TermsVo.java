@@ -20,6 +20,4 @@ public class TermsVo {
 	private String location;
 	private String finance;
 	private String tax;
-	
-	
 }

@@ -10,12 +10,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name="km_category1") 
+@Table(name="km_category1")
 public class Category1Vo {
 
-	@Id //code1=pk값 선언
+	@Id
 	private int code1;
 	private String title;
-	
 	
 }

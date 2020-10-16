@@ -1,7 +1,9 @@
 package kr.co.kmarket.controller;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.GeneratedValue;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +13,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.co.kmarket.persistance.ProductsCartRepo;
+import kr.co.kmarket.persistance.ProductsOrderRepo;
 import kr.co.kmarket.service.MainService;
 import kr.co.kmarket.service.ShopService;
 import kr.co.kmarket.vo.OrderTotalInfoVo;
 import kr.co.kmarket.vo.CategoriesVo;
 import kr.co.kmarket.vo.MemberVo;
-import kr.co.kmarket.vo.ProductCartVo;
+import kr.co.kmarket.vo.ProductsCartVo;
+import kr.co.kmarket.vo.ProductsOrderVo;
 import kr.co.kmarket.vo.ProductsVo;
 import kr.co.kmarket.vo.ResultVo;
 
@@ -25,6 +30,8 @@ public class ShopController {
 	
 	@Autowired
 	private ShopService service;
+	@Autowired
+	private ProductsOrderRepo productsOrderRepo;
 
 	@GetMapping("/shop/search")
 	public String search() {
@@ -69,10 +76,10 @@ public class ShopController {
 		MemberVo member = (MemberVo) sess.getAttribute("member");
 		
 		if(member != null) {
-			List<ProductCartVo> items = service.selectCart(member.getUid());
+			List<ProductsCartVo> items = service.selectCart(member.getUid());
 			model.addAttribute("items", items);
 			
-			// 전체합계에 출력할 데이터 
+			// 전체합계에 출력할 데이터
 			//CartTotalInfoVo totalInfo = service.cartTotalInfo(items);
 			//model.addAttribute("totalInfo", totalInfo);
 			
@@ -82,10 +89,9 @@ public class ShopController {
 		}		
 	}
 	
-	
 	@ResponseBody
 	@PostMapping("/shop/cart")
-	public ResultVo cart(ProductCartVo vo) {
+	public ResultVo cart(ProductsCartVo vo) {
 		
 		int result = service.insertCart(vo);
 		return new ResultVo(result);
@@ -94,37 +100,48 @@ public class ShopController {
 	@ResponseBody
 	@PostMapping("/shop/cartDel")
 	public int cartDel(int[] seqs) {
-		
-		return service.deleteCart(seqs);		
-
+		return service.deleteCart(seqs);
 	}
-	
 	
 	@GetMapping("/shop/order")
 	public String order(int[] seqs, Model model) {
 		
-		List<ProductCartVo> items = service.selectOrder(seqs);
+		List<ProductsCartVo> items = service.selectOrder(seqs);
 		model.addAttribute("items", items);
-	
+		
 		OrderTotalInfoVo totalInfo = service.orderTotalInfo(items);
 		model.addAttribute("totalInfo", totalInfo);
-
+		
 		return "/shop/order";
 	}
+	
 	@PostMapping("/shop/order")
-	public String order(String orderer, String hp) {
-
-		System.out.println("orderer : "+orderer);
-		System.out.println("hp : "+hp);
-
-		return "redirect:/shop/order-complete";
+	public String order(ProductsOrderVo vo, int[] cartSeqs) {
+		
+		vo.setRdate(LocalDateTime.now().toString());	
+		
+		// 주문 테이블에 주문상품 입력
+		// ProductsOrderVo에 @GeneratedValue 붙여야지 ID값인 seq값을 얻을 수 있다.
+		ProductsOrderVo ordered = productsOrderRepo.save(vo);
+		
+		// 주문한 상품은 장바구니에서 삭제
+		service.deleteCart(cartSeqs);
+		
+		return "redirect:/shop/order-complete?seq="+ordered.getSeq();
 	}
 	
-	
-	
-	
 	@GetMapping("/shop/order-complete")
-	public String orderComplete() {
+	public String orderComplete(int seq, Model model) {
+		
+		ProductsOrderVo vo = productsOrderRepo.findById(seq).get();
+		
+		String products = vo.getProducts();
+		
+		
+		
+		
+		model.addAttribute(vo);
+		
 		return "/shop/order-complete";
 	}
 }

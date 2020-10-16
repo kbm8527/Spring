@@ -4,7 +4,7 @@
 
 <section id="admin-product-list" layout:fragment="content">
 	<script>
-	
+		
 		$(function(){
 			
 			var checkAll = $('input[name=all]');
@@ -16,58 +16,42 @@
 				
 				// 체크한 체크박스 value 값 추출
 				$('input[name=chkProduct]:checked').each(function(){
-					
 					var code = $(this).val();
 					codes.push(code);
-					
-					
 				});
 				
 				if(codes.length != 0){
-
-					var param = {'codes': codes};
 					
+					var param = {'codes': codes};
 					
 					$.ajax({
 						url: '/kmarket/admin/product/delete',
 						type: 'get',
 						data: param,
-						traditional : true,//제이쿼리 배열 전송시 반드시 추가되는 옵션
-						dataType:'text',
+						traditional: true, //
+						dataType: 'text',
 						success: function(data){
-							
 							alert("삭제 상품 갯수 : "+data);
 							location.replace('/kmarket/admin/product/list');
-							
-						}					
+						}
 					});
 					
 				}else{
 					alert('상품을 선택하세요.');
-					
 				}
-				
-				
-				
-				
-				
 			});
-			
-			
 			
 			checkAll.click(function(){
 				
-				var isChecked = $(this).is(':checked'); //상태변수선언 
+				var isChecked = $(this).is(':checked');
 				
 				if(isChecked){
-					//체크
+					// 체크
 					$('input[name=chkProduct]').attr('checked', true);
-					
 				}else{
-					//체크해제
+					// 체크해제
 					$('input[name=chkProduct]').attr('checked', false);
 				}
-				
 				
 				
 			});
@@ -77,9 +61,7 @@
 	
 	
 	</script>
-
-
-
+	
 
     <nav>
         <h3>상품목록</h3>
@@ -90,16 +72,16 @@
     <!-- 상품목록 컨텐츠 시작 -->                                
 <section>
     <div>
-    <form th:action="@{/admin/product/search}">
-        <select name="opt">
-            <option value="name">상품명</option>
-            <option value="code">상품코드</option>
-            <option value="company">제조사</option>
-            <option value="seller">판매자</option>                                    
-        </select>
-        <input type="text" name="keyword"/>
-        <input type="submit" class="search" value="검색"/>
-    </form>
+    	<form th:action="@{/admin/product/search}">
+	        <select name="opt">
+	            <option value="name">상품명</option>
+	            <option value="code">상품코드</option>
+	            <option value="company">제조사</option>
+	            <option value="seller">판매자</option>                                    
+	        </select>
+	        <input type="text" name="keyword"/>
+	        <input type="submit" class="search" value="검색"/>
+        </form>
     </div>
     <table>
         <tr>
@@ -133,7 +115,6 @@
             </td>
         </tr>
         
-        
     </table>
 
     
@@ -145,17 +126,16 @@
             <a href="#"><&nbsp;이전</a>
         </span>
         
-        
-        
-    	<span class="num">
+        <span class="num">
             <a th:href="@{/admin/product/list(pg=${num})}"
 			   th:each="num:${#numbers.sequence(1, pageEnd)}"                
                th:class="${#strings.equals(num, currentPg) ? 'on' : ''}">[[${num}]]</a>
+               
         </span>
         <span class="next">
             <a href="#">다음&nbsp;></a>
         </span>
-     </div>
+        </div>
 
 </section>                
 

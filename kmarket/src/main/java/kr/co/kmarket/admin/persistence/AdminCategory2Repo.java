@@ -9,9 +9,8 @@ import kr.co.kmarket.vo.Category1Vo;
 import kr.co.kmarket.vo.Category2Vo;
 
 @Repository
-public interface AdminCategory2Repo extends JpaRepository<Category2Vo, Integer> {
+public interface AdminCategory2Repo extends JpaRepository<Category2Vo, Integer>{
 
-	// select * from km_category2 where code1 //findByCode1OrderBySeq = 쿼리메서드
 	public List<Category2Vo> findByCode1OrderBySeq(int code1);
 	
 }

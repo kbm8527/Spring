@@ -19,26 +19,19 @@ public class MainService {
 	public List<CategoriesVo> selectCategories(){
 		return dao.selectCategories();
 	}
-	public List<ProductsVo> selectHitProduct(){
+	public List<ProductsVo> selectHitProduct() {
 		return dao.selectHitProduct();
 	}
-	public List<ProductsVo> selectBestProduct(){
+	public List<ProductsVo> selectBestProduct() {
 		return dao.selectBestProduct();
 	}
-	
-	public List<ProductsVo> selectRecProduct(){
+	public List<ProductsVo> selectRecProduct() {
 		return dao.selectRecProduct();
 	}
-	
-	public List<ProductsVo> selectNewProduct(){
+	public List<ProductsVo> selectNewProduct() {
 		return dao.selectNewProduct();
 	}
-	
-	public List<ProductsVo> selectDiscountProduct(){
+	public List<ProductsVo> selectDiscountProduct() {
 		return dao.selectDiscountProduct();
 	}
-	
-	
-	
-	
 }

@@ -17,31 +17,26 @@ import kr.co.kmarket.vo.ProductsVo;
 
 @Controller
 public class MainController {
-
 	
 	@Autowired
 	private MainService service;
-	
+
 	@GetMapping(value={"/", "/index"})
 	public String index(Model model, HttpSession sess) {
-		
 		
 		List<CategoriesVo> cate1List = service.selectCategories();
 		List<ProductsVo> hitList = service.selectHitProduct();
 		List<ProductsVo> bestList = service.selectBestProduct();
 		
-		
 		sess.setAttribute("cate1List", cate1List);
-		//System.out.println("길이1: "+cateList.size());
-		//System.out.println("길이2: "+cateList.get(1).getCate2List().size());
-		
+		//System.out.println("길이1 : "+cateList.size());
+		//System.out.println("길이2 : "+cateList.get(2).getCate2List().size());  
 		
 		model.addAttribute("hitList", hitList);
 		model.addAttribute("bestList", bestList);
-				
 		
 		return "/index";
-	}	
+	}
 	
 	@ResponseBody
 	@GetMapping("/main/recommend")
@@ -51,15 +46,15 @@ public class MainController {
 	
 	@ResponseBody
 	@GetMapping("/main/newItems")
-	public List<ProductsVo> newItems () {
+	public List<ProductsVo> newItems() {
 		return service.selectNewProduct();
 	}
 	
 	@ResponseBody
 	@GetMapping("/main/discountItems")
-	public List<ProductsVo> discountItems () {
+	public List<ProductsVo> discountItems() {
 		return service.selectDiscountProduct();
 	}
 	
-
+	
 }

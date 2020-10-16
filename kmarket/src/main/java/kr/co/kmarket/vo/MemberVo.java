@@ -13,7 +13,7 @@ import lombok.Setter;
 @Table(name = "km_member")
 public class MemberVo {
 
-	private int type; //일반,판매자회원 나누기위해
+	private int type;
 	@Id
 	private String uid; 
 	private String pass; 

@@ -14,54 +14,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <script th:src="@{/js/slider.js}"></script>
-    
     <script>
-    	
     	$(document).ready(function(){
     		
-    		var menu = $('.menu ul:nth-child(1) a'); 
-    		
+    		var menu = $('.menu ul:nth-child(1) a');
     		
     		$('#top').click(function(){
-    			
-    			$('html, body').animate({'scrollTop':0});
-    			
+    			$('html, body').animate({'scrollTop': 0});
     		});
     		
     		menu.click(function(e){
     			e.preventDefault();
-    			
     			var i = $(this).parent().index();
-    			$('html, body').animate({'scrollTop':622+(733*i)});
-    			
-    			/*
-    			switch(i){
-    			
-    			case 0:
-    				$('html, body').animate({'scrollTop':622});
-    				break;
-    			case 1:
-    				$('html, body').animate({'scrollTop':622+733});
-    				break;
-    			case 2:
-    				$('html, body').animate({'scrollTop':622+733+733});
-    				break;
-    			case 3:
-    				$('html, body').animate({'scrollTop':622+733+733+733});
-    				break;
-    			
-    			}
-    			*/
-    		
+    			$('html, body').animate({'scrollTop': 622+(733*i)});
     		});
-    		
-    		
     	});
-    
-    
-    
     </script>
-    
     
 </head>
 <body>

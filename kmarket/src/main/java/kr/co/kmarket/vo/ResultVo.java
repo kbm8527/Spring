@@ -9,7 +9,6 @@ public class ResultVo {
 
 	private int result;
 	
-	//생성자
 	public ResultVo(int result) {
 		this.result = result;
 	}

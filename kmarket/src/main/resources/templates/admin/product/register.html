@@ -1,13 +1,8 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	  layout:decorate="/layout/layout_admin.html">
-
-
-
-
+	  
 <section id="admin-product-register" layout:fragment="content">
-
-
     <nav>
         <h3>상품등록</h3>
         <p>
@@ -22,24 +17,22 @@
 			<section>
 			    <h4>상품분류</h4>
 			    <p>
-			        기본분류는 반드시 선택하셔야 합니다. 하나의 상품에 1개의 분류를 지정 합니다.
+					기본분류는 반드시 선택하셔야 합니다. 하나의 상품에 1개의 분류를 지정 합니다.
 			    </p>
 			    <table>
 			        <tr>
 			            <td>1차 분류</td>
 			            <td>
 			                <select name="cate1" required>
-			                    <option value="0">1차 분류 선택</option>
-			                                                                   
+			                    <option value="0">1차 분류 선택</option>			                                                                    
 			                </select>
 			            </td>
 			        </tr>
 			        <tr>
 			            <td>2차 분류</td>
 			            <td>
-			                <select name="cate2">
-			                    <option value="0">2차 분류 선택</option>
-			                                                                 
+			                <select name="cate2" required>
+			                    <option value="0">2차 분류 선택</option>			                                                                    
 			                </select>
 			            </td>
 			        </tr>
@@ -55,7 +48,7 @@
 			    <table>
 			        <tr>
 			            <td>상품명</td>
-			            <td><input type="text" name="name" required/></td>
+			            <td><input type="text" name="name" required /></td>
 			        </tr>
 			        <tr>
 			            <td>기본설명</td>
@@ -76,7 +69,7 @@
 			            <td>할인율</td>
 			            <td>
 			                <span>0을 입력하면 할인율 없음</span>
-			                <input type="text" name="discount"required/>%
+			                <input type="text" name="discount" required/>%
 			            </td>
 			        </tr>
 			        <tr>

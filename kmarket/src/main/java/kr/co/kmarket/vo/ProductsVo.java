@@ -1,22 +1,29 @@
 package kr.co.kmarket.vo;
 
-import java.util.Date;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import lombok.Getter;
 import lombok.Setter;
-
+import lombok.ToString;
+import net.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
 
 @Getter
 @Setter
+@ToString
 @Entity
-@Table(name="km_products")
+@Table(name = "km_products")
 public class ProductsVo {
 
 	@Id
@@ -35,8 +42,8 @@ public class ProductsVo {
 	private int delivery;
 	private int hit;
 	private int score;
-	private int review; // 테이블에 컬럼추가 후 필드 추가
-	private String thumb1;  
+	private int review;
+	private String thumb1;
 	private String thumb2;
 	private String thumb3;
 	private String detail;
@@ -53,20 +60,16 @@ public class ProductsVo {
 	private String etc4;
 	private String etc5;
 	
-	//추가필드
+	// 추가 필드
 	@Transient
 	private int salePrice;
-	
-	
-	
-	@Transient //테이블에서 제외시키기 위해 transient 어노테이션 추가
+	@Transient
 	private MultipartFile file1;
 	@Transient
 	private MultipartFile file2;
-	@Transient
+	@Transient	
 	private MultipartFile file3;
 	@Transient
 	private MultipartFile file4;
-	
 	
 }

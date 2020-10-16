@@ -5,8 +5,7 @@
 
 <mapper namespace="kr.co.kmarket.dao.ShopDao">
 
-
-		<select id="selectProducts" resultType="kr.co.kmarket.vo.ProductsVo">
+	<select id="selectProducts" resultType="kr.co.kmarket.vo.ProductsVo">
 		SELECT *, Floor(price*(1-discount/100)) AS salePrice FROM `km_products`
 		WHERE `cate1`=#{cate1} AND `cate2`=#{cate2}
 		<if test="sort == 1">ORDER BY `sold` DESC</if>
@@ -37,7 +36,7 @@
 		`rdate`=NOW();
 	</insert>
 	
-	<select id="selectCart" resultType="kr.co.kmarket.vo.ProductCartVo">
+	<select id="selectCart" resultType="kr.co.kmarket.vo.ProductsCartVo">
 		SELECT a.*, b.`cate1`, b.`cate2`, b.`thumb1` 
 		FROM `km_products_cart` AS a
 		JOIN `km_products` AS b
@@ -45,36 +44,29 @@
 		WHERE `uid`=#{uid};
 	</select>
 	
-	
-	<delete id="deleteCart" parameterType="int"> <!--  -->
-		DELETE FROM `km_products_cart` WHERE `seq` IN
+	<delete id="deleteCart" parameterType="int">
+		DELETE FROM `km_products_cart` 
+		WHERE
+		`seq` IN
 		<foreach collection="seqs" item="seq" open="(" separator="," close=")">
-			#{seq}
+			#{seq}	
 		</foreach>
 	</delete>
 	
-	<!-- order -->
-	<select id="selectOrder" resultType="kr.co.kmarket.vo.ProductCartVo">
-		SELECT a.*, b.`cate1`, b.`cate2`, b.`thumb1`
-		FROM `km_products_cart` AS a 
-		JOIN `km_products` AS b 
+	<!-- /shop/order -->
+	<select id="selectOrder" resultType="kr.co.kmarket.vo.ProductsCartVo">
+		SELECT a.*, b.`cate1`, b.`cate2`, b.`thumb1` 
+		FROM `km_products_cart` AS a
+		JOIN `km_products` AS b
 		ON a.`code` = b.`code`
 		WHERE
 		`seq` IN
 		<foreach collection="seqs" item="seq" open="(" separator="," close=")">
 			#{seq}	
 		</foreach>
-		
 	</select>
 	
 	<!-- 
-	
-	<select id="selectMember" resultType="kr.co.kmarket.vo.MemberVo">
-		SELECT * FROM `km_member` WHERE `uid`=#{uid};
-	</select>
-	
-	
-	
 	<insert id="insertUser">
 		INSERT INTO `USER3` VALUES (#{uid}, #{name}, #{hp}, #{age});		
 	</insert>

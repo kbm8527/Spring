@@ -13,5 +13,4 @@ public class CategoriesVo {
 	private String title;
 	
 	private List<Category2Vo> cate2List;
-	
 }

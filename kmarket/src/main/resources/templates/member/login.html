@@ -3,20 +3,14 @@
 	  layout:decorate="/layout/layout_member.html">
 
 <div id="member-login" layout:fragment="content">
-	<script th:inline="javascript"> //  inline 선언해야 자바스크립트 사용 가능 
-		
-	
+	<script th:inline="javascript">
 		var success = [[${success}]];
 		if(success == 'fail'){
-			alert('로그인에 실패했습니다. 아이디, 비밀번호를 다시 확인하십시오.');
+			alert('로그인에 실패했습니다. 아이디, 비밀번호를 다시 확인하십시요.');
 		}else if(success == 'cart'){
 			alert('장바구니 확인을 위해 로그인을 먼저 해야합니다.');
 		}
-		
 	</script>
-
-
-
 
     <img src="../img/member_txt_login.gif" alt="로그인" />
 	<form th:action="@{/member/login}" method="post">

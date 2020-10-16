@@ -19,5 +19,4 @@ public class Category2Vo {
 	private int code2;
 	private String title;
 	
-	
 }

@@ -11,30 +11,28 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import kr.co.kmarket.persistence.MemberRepo;
-import kr.co.kmarket.persistence.TermsRepo;
+import kr.co.kmarket.persistance.MemberRepo;
+import kr.co.kmarket.persistance.TermsRepo;
 import kr.co.kmarket.service.MemberService;
 import kr.co.kmarket.vo.MemberVo;
 import kr.co.kmarket.vo.TermsVo;
 
 @Controller
 public class MemberController {
-
+	
 	@Autowired
 	private TermsRepo termsRepo;
 	@Autowired
 	private MemberRepo memberRepo;
+	
 	@Autowired
 	private MemberService service;
-	
 	
 	@GetMapping("/member/logout")
 	public String logout(HttpSession sess) {
 		sess.invalidate();
 		return "redirect:/";
 	}
-
-	
 	
 	@GetMapping("/member/login")
 	public String login(String success, Model model) {
@@ -42,14 +40,11 @@ public class MemberController {
 		return "/member/login";
 	}
 	
-	
-	
-	
 	@PostMapping("/member/login")
 	public String login(MemberVo vo, HttpSession sess) {
-
+		
 		MemberVo member = service.selectMember(vo);
-
+		
 		if(member != null) {
 			sess.setAttribute("member", member);
 			sess.setAttribute("type", member.getType());
@@ -67,19 +62,13 @@ public class MemberController {
 	@GetMapping("/member/signup")
 	public String signup(String type, Model model) {
 		
-		
-		TermsVo vo = termsRepo.findById(0).get(); 
-		 
-		
-		
+		TermsVo vo = termsRepo.findById(0).get();
 		
 		model.addAttribute("type", type);
-		model.addAttribute(vo); // view와 공유
-			
+		model.addAttribute(vo);
 		
 		return "/member/signup";
 	}
-	
 	
 	
 	@GetMapping("/member/register")
@@ -87,23 +76,17 @@ public class MemberController {
 		return "/member/register";
 	}
 	
-	
 	@PostMapping("/member/register")
 	public String register(MemberVo vo, HttpServletRequest req) {
 		
-		//String pass = vo.getPass();
-		
-		//String encPass = pass; // 가공처리
-		
-		//vo.setPass(encPass);
 		vo.setIp(req.getRemoteAddr());
 		vo.setRdate(LocalDateTime.now().toString());
 		
-		memberRepo.save(vo); //insert문
+		memberRepo.save(vo);
+		
 		return "redirect:/member/login";
 	}
 	
-	//view 출력
 	@GetMapping("/member/register-seller")
 	public String registerSeller() {
 		return "/member/register-seller";
@@ -111,7 +94,6 @@ public class MemberController {
 	
 	@PostMapping("/member/register-seller")
 	public String registerSeller(MemberVo vo, HttpServletRequest req) {
-		
 		
 		vo.setIp(req.getRemoteAddr());
 		vo.setRdate(LocalDateTime.now().toString());

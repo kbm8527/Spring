@@ -15,4 +15,7 @@ public class OrderTotalInfoVo {
 	int delivery;
 	int point;
 	int total;
+	
+	
+	
 }

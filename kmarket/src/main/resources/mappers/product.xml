@@ -5,17 +5,15 @@
 
 <mapper namespace="kr.co.kmarket.admin.dao.AdminProductDao">
 
-
 	<select id="selectProducts" resultType="kr.co.kmarket.vo.ProductsVo">
 		SELECT * FROM `km_products` LIMIT #{start}, 10;
 	</select>
-
-
+	
+	
 	<select id="selectCountProducts" resultType="int">
 		SELECT COUNT(*) FROM `km_products`;
 	</select>
 	
-
 	<select id="selectProductsBySearch" resultType="kr.co.kmarket.vo.ProductsVo">
 		SELECT * FROM `km_products` WHERE
 		<if test="opt.equals('name')">
@@ -32,16 +30,13 @@
 		</if>
 		LIMIT ${start}, 10;
 	</select>
-
-
+	
 	<delete id="deleteProduct" parameterType="int">
 		DELETE FROM `km_products` WHERE `code` IN
 		<foreach collection="array" item="code" open="(" separator="," close=")">
-			#{code}
+			#{code}	
 		</foreach>
 	</delete>
-
-
 
 	<!-- 
 	<insert id="insertUser">

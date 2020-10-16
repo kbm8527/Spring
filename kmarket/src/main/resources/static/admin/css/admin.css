@@ -236,10 +236,9 @@ input {
     box-sizing: border-box;
 }
 
-input.search{
+input.search {
 	width: 60px;
 }
-
 
 input[type=checkbox] {
     width: auto;

@@ -12,14 +12,13 @@
           <h2>[[${item.name}]]</h2>
           <div class="org_price">
             <del>[[${#numbers.formatInteger(item.price, 3, 'COMMA')}]]</del>
-            <span>[[${item.discount}]]%</span>
+			<span>[[${item.discount}]]%</span>
           </div>
           <div class="dis_price">
             <ins>[[${#numbers.formatInteger(item.salePrice, 3, 'COMMA')}]]</ins>
           </div>
         </a>
       </li>
-      
     </ol>
   </article>
             
